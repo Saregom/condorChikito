@@ -1,0 +1,163 @@
+{
+    "cursos": [
+        {
+            "id": 1,
+            "nombre": "logica",
+            "tipo": "teorico",
+            "creditos": 10,
+            "estudiantes": [
+                {
+                    "codigo": 202210003,
+                    "nombre": "perrito",
+                    "apellido": "manuela",
+                    "notas": [
+                        4,
+                        4.5,
+                        5
+                    ],
+                    "notaTotal": 4.47
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "calculo20",
+            "tipo": "teorico-practico",
+            "creditos": 20,
+            "estudiantes": [
+                {
+                    "codigo": 202210002,
+                    "nombre": "santis",
+                    "apellido": "rey",
+                    "notas": [
+                        3,
+                        4,
+                        6
+                    ],
+                    "notaTotal": 4.5
+                },
+                {
+                    "codigo": 202210003,
+                    "nombre": "perrito",
+                    "apellido": "manuela",
+                    "notas": [
+                        2,
+                        3,
+                        4,
+                        5
+                    ],
+                    "notaTotal": 3.4
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "calculo3",
+            "tipo": "teorico",
+            "creditos": 30,
+            "estudiantes": [
+                {
+                    "codigo": 202210001,
+                    "nombre": "Juanito",
+                    "apellido": "Mendez",
+                    "notas": [
+                        3,
+                        4,
+                        7
+                    ],
+                    "notaTotal": 5
+                },
+                {
+                    "codigo": 202210002,
+                    "nombre": "santis",
+                    "apellido": "rey",
+                    "notas": [
+                        1,
+                        4,
+                        8
+                    ],
+                    "notaTotal": 100
+                },
+                {
+                    "codigo": 202210003,
+                    "nombre": "perrito",
+                    "apellido": "manuela",
+                    "notas": [
+                        3,
+                        4.5,
+                        2
+                    ],
+                    "notaTotal": 3.23
+                }
+            ]
+        }
+    ],
+    "estudiantes": [
+        {
+            "codigo": 202210001,
+            "nombre": "Juanito",
+            "apellido": "Mendez",
+            "promedio": 5,
+            "cursos": [
+                {
+                    "id": 3,
+                    "nombre": "calculo3",
+                    "tipo": "teorico",
+                    "creditos": 30,
+                    "notaTotal": 5
+                }
+            ]
+        },
+        {
+            "codigo": 202210002,
+            "nombre": "santis",
+            "apellido": "rey",
+            "promedio": 61.8,
+            "cursos": [
+                {
+                    "id": 2,
+                    "nombre": "calculo20",
+                    "tipo": "teorico-practico",
+                    "creditos": 20,
+                    "notaTotal": 4.5
+                },
+                {
+                    "id": 3,
+                    "nombre": "calculo3",
+                    "tipo": "teorico",
+                    "creditos": 30,
+                    "notaTotal": 100
+                }
+            ]
+        },
+        {
+            "codigo": 202210003,
+            "nombre": "perrito",
+            "apellido": "manuela",
+            "promedio": 3.49,
+            "cursos": [
+                {
+                    "id": 1,
+                    "nombre": "logica",
+                    "tipo": "teorico",
+                    "creditos": 10,
+                    "notaTotal": 4.47
+                },
+                {
+                    "id": 3,
+                    "nombre": "calculo3",
+                    "tipo": "teorico",
+                    "creditos": 30,
+                    "notaTotal": 3.23
+                },
+                {
+                    "id": 2,
+                    "nombre": "calculo20",
+                    "tipo": "teorico-practico",
+                    "creditos": 20,
+                    "notaTotal": 3.4
+                }
+            ]
+        }
+    ]
+}
