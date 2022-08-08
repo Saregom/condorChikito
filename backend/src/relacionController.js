@@ -92,6 +92,7 @@ let control = {
                                         curso2.notaTotal = calcularNotaTotal(curso, req.body.notas)
                                     }
                                 })
+                                estudiante2.promedio = calcularPromedio(estudiante2)
                             }
                         })
                     }
@@ -120,14 +121,15 @@ let control = {
                         let index = curso.estudiantes.indexOf(estudiante)
                         curso.estudiantes.splice(index, 1)
                         
-                        dataBase.estudiantes.map((estudiante)=>{
-                            if(estudiante.codigo == req.body.codigoEstudiante){
-                                estudiante.cursos.map((curso2)=>{
+                        dataBase.estudiantes.map((estudiante2)=>{
+                            if(estudiante2.codigo == req.body.codigoEstudiante){
+                                estudiante2.cursos.map((curso2)=>{
                                     if(curso2.id == req.body.idCurso){
-                                        index = estudiante.cursos.indexOf(curso2)
-                                        estudiante.cursos.splice(index, 1)
+                                        index = estudiante2.cursos.indexOf(curso2)
+                                        estudiante2.cursos.splice(index, 1)
                                     }
                                 })
+                                estudiante2.promedio = calcularPromedio(estudiante2)
                             }
                         })
                     }
@@ -142,6 +144,14 @@ let control = {
                 mensaje: "El estudiante no existe en el curso"
             })
         }
+    },
+    cargarDatosPorDefecto: function(req, res){
+        if(req.body.cargar == "true"){
+            //let defecto = require('./datosPorDefecto.json')
+            dataBase = require('../datosPorDefecto.json')
+            writeFile(res, "Error al cargar datos por defecto", "Datos por defecto cargados")
+        }
+        
     }
 }
 
@@ -191,4 +201,6 @@ const writeFile = (res, msg1, msg2) => {
     });
 }
 
-module.exports = control;
+exports.control = control;
+exports.calcularPromedio = calcularPromedio;
+exports.writeFile = writeFile;

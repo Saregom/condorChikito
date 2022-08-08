@@ -1,5 +1,5 @@
-let fs = require("fs")
 let dataBase = require("../dataBase.json")
+let writeFile = require("./relacionController.js").writeFile
 
 let control = {
     buscarEstudiante: function(req, res){
@@ -134,20 +134,6 @@ let control = {
             sinCurso
         })
     }
-}
-
-const writeFile = (res, msg1, msg2) => {
-    fs.writeFile('dataBase.json', JSON.stringify(dataBase, null, 4), 'utf8', (err) => {
-        if (err) {
-            res.status(500).send({
-                mensaje: msg1
-            })
-        } else {
-            res.status(200).send({
-                mensaje: msg2
-            })
-        }
-    });
 }
 
 module.exports = control;

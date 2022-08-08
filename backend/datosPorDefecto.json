@@ -1,0 +1,278 @@
+{
+    "cursos": [
+        {
+            "id": 1,
+            "nombre": "Calculo",
+            "tipo": "teorico",
+            "creditos": 3,
+            "estudiantes": [
+                {
+                    "codigo": 202210001,
+                    "nombre": "Katniss",
+                    "apellido": "Everdeen",
+                    "notas": [
+                        1,
+                        2,
+                        3
+                    ],
+                    "notaTotal": 1.95
+                },
+                {
+                    "codigo": 202210003,
+                    "nombre": "Mark",
+                    "apellido": "Zukerberg",
+                    "notas": [
+                        2,
+                        3,
+                        4
+                    ],
+                    "notaTotal": 2.95
+                },
+                {
+                    "codigo": 202210005,
+                    "nombre": "Leo",
+                    "apellido": "Dicaprio",
+                    "notas": [
+                        3,
+                        4,
+                        5
+                    ],
+                    "notaTotal": 3.95
+                },
+                {
+                    "codigo": 202210007,
+                    "nombre": "Vin",
+                    "apellido": "Diesel",
+                    "notas": [
+                        4,
+                        4.5,
+                        5
+                    ],
+                    "notaTotal": 4.47
+                },
+                {
+                    "codigo": 202210008,
+                    "nombre": "John",
+                    "apellido": "Wick",
+                    "notas": [
+                        5,
+                        5,
+                        5
+                    ],
+                    "notaTotal": 5
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Giweb",
+            "tipo": "teorico-practico",
+            "creditos": 2,
+            "estudiantes": [
+                {
+                    "codigo": 202210008,
+                    "nombre": "John",
+                    "apellido": "Wick",
+                    "notas": [
+                        5,
+                        5,
+                        5,
+                        5
+                    ],
+                    "notaTotal": 5
+                },
+                {
+                    "codigo": 202210001,
+                    "nombre": "Katniss",
+                    "apellido": "Everdeen",
+                    "notas": [
+                        1,
+                        1.3,
+                        1.2,
+                        1.4
+                    ],
+                    "notaTotal": 1.21
+                },
+                {
+                    "codigo": 202210002,
+                    "nombre": "Petro",
+                    "apellido": "sky",
+                    "notas": [
+                        2,
+                        3,
+                        4,
+                        5
+                    ],
+                    "notaTotal": 3.4
+                },
+                {
+                    "codigo": 202210004,
+                    "nombre": "Johnny",
+                    "apellido": "Depp",
+                    "notas": [
+                        2,
+                        3,
+                        3,
+                        2
+                    ],
+                    "notaTotal": 2.45
+                },
+                {
+                    "codigo": 202210006,
+                    "nombre": "Brad",
+                    "apellido": "Pitt",
+                    "notas": [
+                        3,
+                        3.5,
+                        4.5,
+                        5
+                    ],
+                    "notaTotal": 3.92
+                }
+            ]
+        }
+    ],
+    "estudiantes": [
+        {
+            "codigo": 202210001,
+            "nombre": "Katniss",
+            "apellido": "Everdeen",
+            "promedio": 1.65,
+            "cursos": [
+                {
+                    "id": 1,
+                    "nombre": "Calculo",
+                    "tipo": "teorico",
+                    "creditos": 3,
+                    "notaTotal": 1.95
+                },
+                {
+                    "id": 2,
+                    "nombre": "Giweb",
+                    "tipo": "teorico-practico",
+                    "creditos": 2,
+                    "notaTotal": 1.21
+                }
+            ]
+        },
+        {
+            "codigo": 202210002,
+            "nombre": "Petro",
+            "apellido": "sky",
+            "promedio": 3.4,
+            "cursos": [
+                {
+                    "id": 2,
+                    "nombre": "Giweb",
+                    "tipo": "teorico-practico",
+                    "creditos": 2,
+                    "notaTotal": 3.4
+                }
+            ]
+        },
+        {
+            "codigo": 202210003,
+            "nombre": "Mark",
+            "apellido": "Zukerberg",
+            "promedio": 2.95,
+            "cursos": [
+                {
+                    "id": 1,
+                    "nombre": "Calculo",
+                    "tipo": "teorico",
+                    "creditos": 3,
+                    "notaTotal": 2.95
+                }
+            ]
+        },
+        {
+            "codigo": 202210004,
+            "nombre": "Johnny",
+            "apellido": "Depp",
+            "promedio": 2.45,
+            "cursos": [
+                {
+                    "id": 2,
+                    "nombre": "Giweb",
+                    "tipo": "teorico-practico",
+                    "creditos": 2,
+                    "notaTotal": 2.45
+                }
+            ]
+        },
+        {
+            "codigo": 202210005,
+            "nombre": "Leo",
+            "apellido": "Dicaprio",
+            "promedio": 3.95,
+            "cursos": [
+                {
+                    "id": 1,
+                    "nombre": "Calculo",
+                    "tipo": "teorico",
+                    "creditos": 3,
+                    "notaTotal": 3.95
+                }
+            ]
+        },
+        {
+            "codigo": 202210006,
+            "nombre": "Brad",
+            "apellido": "Pitt",
+            "promedio": 3.92,
+            "cursos": [
+                {
+                    "id": 2,
+                    "nombre": "Giweb",
+                    "tipo": "teorico-practico",
+                    "creditos": 2,
+                    "notaTotal": 3.92
+                }
+            ]
+        },
+        {
+            "codigo": 202210007,
+            "nombre": "Vin",
+            "apellido": "Diesel",
+            "promedio": 4.47,
+            "cursos": [
+                {
+                    "id": 1,
+                    "nombre": "Calculo",
+                    "tipo": "teorico",
+                    "creditos": 3,
+                    "notaTotal": 4.47
+                }
+            ]
+        },
+        {
+            "codigo": 202210008,
+            "nombre": "John",
+            "apellido": "Wick",
+            "promedio": 5,
+            "cursos": [
+                {
+                    "id": 1,
+                    "nombre": "Calculo",
+                    "tipo": "teorico",
+                    "creditos": 3,
+                    "notaTotal": 5
+                },
+                {
+                    "id": 2,
+                    "nombre": "Giweb",
+                    "tipo": "teorico-practico",
+                    "creditos": 2,
+                    "notaTotal": 5
+                }
+            ]
+        },
+        {
+            "codigo": 202210009,
+            "nombre": "Jared",
+            "apellido": "Leto",
+            "promedio": 0,
+            "cursos": []
+        }
+    ]
+}

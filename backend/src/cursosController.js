@@ -1,5 +1,6 @@
-let fs = require("fs")
 let dataBase = require("../dataBase.json")
+let calcularPromedio = require("./relacionController.js").calcularPromedio
+let writeFile = require("./relacionController.js").writeFile
 
 let control = {
     buscarCurso: function(req, res){
@@ -51,6 +52,7 @@ let control = {
                         if(curso2.id == req.body.id){
                             curso2.nombre = req.body.nombre
                             curso2.creditos = req.body.creditos
+                            estudiante.promedio = calcularPromedio(estudiante)
                         }
                     })
                 })
@@ -64,7 +66,6 @@ let control = {
                 mensaje: "El curso no existe"
             })
         }
-        
     },
     eliminarCurso: function(req, res){
         let encontrado = false
@@ -81,6 +82,7 @@ let control = {
                         if(curso2.id == req.body.id){
                             index = estudiante.cursos.indexOf(curso2)
                             estudiante.cursos.splice(index, 1)
+                            estudiante.promedio = calcularPromedio(estudiante)
                         }
                     })
                 })
@@ -121,7 +123,6 @@ let control = {
                             }
                         })
                     }
-                    
                 })
             })
         }
@@ -130,21 +131,6 @@ let control = {
             ordenarNotas
         })
     }
-}
-
-
-const writeFile = (res, msg1, msg2) => {
-    fs.writeFile('dataBase.json', JSON.stringify(dataBase, null, 4), 'utf8', (err) => {
-        if (err) {
-            res.status(500).send({
-                mensaje: msg1
-            })
-        } else {
-            res.status(200).send({
-                mensaje: msg2
-            })
-        }
-    });
 }
 
 module.exports = control;

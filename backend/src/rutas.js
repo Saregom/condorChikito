@@ -1,13 +1,13 @@
 const express = require("express");
 const cursosController = require("./cursosController")
 const estudiantesController = require("./estudiantesController")
-const relacionesController = require("./relacionController")
+const relacionesController = require("./relacionController").control
 
 const path = require('path');
 
 let router = express.Router()
 
-router.get("/", (req, res)=>{ res.sendFile(path.join(__dirname + "../../../frontend/index.html")) })
+/* router.get("/", (req, res)=>{ res.sendFile(path.join(__dirname + "../../../frontend/index.html")) }) */
 
 //rutas cursos
 router.get("/cursos", cursosController.buscarCurso)
@@ -22,6 +22,8 @@ router.get("/cursos/estudiantesDisponibles", relacionesController.estudiantesDis
 router.put("/cursos/agregarEstudianteCurso", relacionesController.agregarEstudianteCurso)
 router.put("/cursos/actualizarEstudianteCurso", relacionesController.actualizarEstudianteCurso)
 router.delete("/cursos/eliminarEstudianteCurso", relacionesController.eliminarEstudianteCurso)
+//Cargar datos por defecto cargarDatosPorDefecto
+router.post("/cargarDatosPorDefecto", relacionesController.cargarDatosPorDefecto)
 
 //rutas estudiantes y filtros
 router.get("/estudiantes", estudiantesController.buscarEstudiante)
