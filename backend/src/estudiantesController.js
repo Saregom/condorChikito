@@ -16,6 +16,11 @@ let control = {
             })
         }
     },
+    buscarEstudiantes: function(req, res){
+        res.status(200).send(
+            dataBase.estudiantes
+        )
+    },
     crearEstudiante: function(req, res){
         let estudiantes = dataBase.estudiantes
         let codigo;
@@ -92,33 +97,34 @@ let control = {
     },
     buscarTopEstudiantes: function(req, res){
         let topPromedios = []
-        let i = 1;
+        
         if(dataBase.estudiantes.length != 0){
             dataBase.estudiantes.map((estudiante)=>{
-                if(i <= 10){
-                    topPromedios.push(estudiante.promedio)
-                }
-                i++;
+                topPromedios.push(estudiante.promedio)
             })
             topPromedios.sort((a, b) => b - a)
-    
+            let i = 1;
             topPromedios.map((prom, index) => {
-                dataBase.estudiantes.map((estudiante) => {
-                    if(estudiante.promedio == prom){
-                        topPromedios[index] = {
-                            codigo: estudiante.codigo,
-                            nombre: estudiante.nombre,
-                            apellido: estudiante.apellido,
-                            promedio: estudiante.promedio,
+                if(i <= 10){
+                    for(let estudiante of dataBase.estudiantes){
+                        if(estudiante.promedio == prom){
+                            topPromedios[index] = {
+                                codigo: estudiante.codigo,
+                                nombre: estudiante.nombre,
+                                apellido: estudiante.apellido,
+                                promedio: estudiante.promedio,
+                            }
+                            break
                         }
                     }
-                })
+                }else{
+                    topPromedios.pop()
+                }
+                i++
             })
         }
 
-        res.status(200).send({
-            topPromedios
-        })
+        res.status(200).send(topPromedios)
     },
     buscarEstudiantesSinCurso: function(req, res){
         let sinCurso = []
@@ -130,9 +136,7 @@ let control = {
             })
         }
 
-        res.status(200).send({
-            sinCurso
-        })
+        res.status(200).send(sinCurso)
     }
 }
 

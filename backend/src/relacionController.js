@@ -146,7 +146,7 @@ let control = {
         }
     },
     cargarDatosPorDefecto: function(req, res){
-        if(req.body.cargar == "true"){
+        if(req.body.cargar == true){
             //let defecto = require('./datosPorDefecto.json')
             dataBase = require('../datosPorDefecto.json')
             writeFile(res, "Error al cargar datos por defecto", "Datos por defecto cargados")

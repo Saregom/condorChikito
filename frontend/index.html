@@ -4,9 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Condor chikito</title>
 </head>
 <body>
-    <h1>CondorUD</h1>
+    <h1>Condor chikito</h1>
+    <div class="container">
+        <div class="menu">
+            <p onclick="showHide('.cont-cursos', '.cont-estudiantes')">Cursos</p>
+            <p onclick="showHide('.cont-estudiantes', '.cont-cursos')">Estudiantes</p>
+        </div>
+        <div class="cont-cursos">
+            <h2>Cursos</h2>
+            <form name="formCurso" class="form form-curso" >
+                <input class="cursoId" id="cursoId" type="number" placeholder="Id">
+                <input class="cursoNombre" id="cursoNombre" type="text" placeholder="Nombre">
+                <input class="cursoTipo" id="cursoTipo" type="text" placeholder="Tipo">
+                <input class="cursoCreditos" id="cursoCreditos" type="number" placeholder="Creditos">
+    
+                <input type="submit" value="Agregar curso">
+                <input type="button" onclick="putCurso()" value="Actualizar curso">
+                <input type="button" onclick="cargarDatosDefecto()" value="Agregar datos por defecto">
+            </form>
+
+            <div class="div-table-cursos">
+                <table class="table table-cursos">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nomre</th>
+                            <th>Tipo</th>
+                            <th>Creditos</th>
+                            <th>Detalles</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="div-table-cursos-estudiantes" style="display: none;">
+                    <form class="form form-curso-estudiante" >
+                        <input class="cursoId2" id="cursoId2" type="number" placeholder="Id curso">
+                        <input class="codigoEstudiante" id="codigoEstudiante" type="number" placeholder="Codigo estudiante">
+                        <input class="notas" id="notas" type="text" placeholder="notas separadas por coma">
+            
+                        <input type="button" onclick="postCursoEstudiante()" value="Agregar estudiante al curso">
+                        <input type="button" onclick="putCursoEstudiante()" value="Actualizar notas de estudiante">
+                    </form>
+                    <table class="table table-cursos-estudiantes">
+                        <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Notas</th>
+                                <th>Nota total</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="cont-estudiantes" style="display: none;">
+            <h2>Estudiantes</h2>
+            <input type="button" onclick="showEstudiantes()" value="Todos los estudiantes">
+            <input type="button" onclick="topPromedios()" value="Top promedios">
+            <input type="button" onclick="sinCurso()" value="Estudiantes sin curso">
+            <form name="formEstudiante" class="form form-estudiante" id="formEstudiante">
+                <input class="codigo" id="codigo" type="number" placeholder="Codigo">
+                <input class="estudianteNombre" id="estudianteNombre" type="text" placeholder="Nombre">
+                <input class="estudianteApellido" id="estudianteApellido" type="text" placeholder="Apellido">
+    
+                <input type="submit" value="Agregar estudiante">
+                <input type="button" onclick="putEstudiante()" value="Actualizar estudiante">
+            </form>
+            <div class="div-table-estudiantes">
+                <table class="table table-estudiantes">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Promedio</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

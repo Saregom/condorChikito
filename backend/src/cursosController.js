@@ -5,11 +5,16 @@ let writeFile = require("./relacionController.js").writeFile
 let control = {
     buscarCurso: function(req, res){
         let resultado = dataBase.cursos.filter( (curso) => curso.id == req.query.id )
+        let result = {}
+        dataBase.cursos.map((curso)=>{
+            if(curso.id == req.query.id){
+                result = curso
+            }
+        })
+        
 
-        if(resultado.length != 0){
-            res.status(200).send({
-                encontrados: resultado
-            })
+        if(Object.entries(result).length != 0){
+            res.status(200).send(result)
         }
         else{
             res.status(404).send({
@@ -88,6 +93,7 @@ let control = {
                 })
             }
         })
+        
 
         if(encontrado){
             writeFile(res, "Error al eliminar el curso", "Curso eliminado")
@@ -118,6 +124,7 @@ let control = {
                                     codigo: estudiante.codigo,
                                     nombre: estudiante.nombre,
                                     apellido: estudiante.apellido,
+                                    notas: estudiante.notas,
                                     notaTotal: estudiante.notaTotal,
                                 }
                             }
@@ -127,9 +134,7 @@ let control = {
             })
         }
 
-        res.status(200).send({
-            ordenarNotas
-        })
+        res.status(200).send(ordenarNotas)
     }
 }
 

@@ -19,7 +19,7 @@ router.get("/ordenarEstudiantesCurso", cursosController.ordenarEstudiantesCurso)
 
 //rutas estudiantes de cursos 
 router.get("/cursos/estudiantesDisponibles", relacionesController.estudiantesDisponibles)
-router.put("/cursos/agregarEstudianteCurso", relacionesController.agregarEstudianteCurso)
+router.post("/cursos/agregarEstudianteCurso", relacionesController.agregarEstudianteCurso)
 router.put("/cursos/actualizarEstudianteCurso", relacionesController.actualizarEstudianteCurso)
 router.delete("/cursos/eliminarEstudianteCurso", relacionesController.eliminarEstudianteCurso)
 //Cargar datos por defecto cargarDatosPorDefecto
@@ -27,6 +27,7 @@ router.post("/cargarDatosPorDefecto", relacionesController.cargarDatosPorDefecto
 
 //rutas estudiantes y filtros
 router.get("/estudiantes", estudiantesController.buscarEstudiante)
+router.get("/estudiantesAll", estudiantesController.buscarEstudiantes)
 router.post("/estudiantes", estudiantesController.crearEstudiante)
 router.put("/estudiantes", estudiantesController.actualizarEstudiante)
 router.delete("/estudiantes", estudiantesController.eliminarEstudiante)
