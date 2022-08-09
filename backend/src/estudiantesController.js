@@ -108,13 +108,25 @@ let control = {
                 if(i <= 10){
                     for(let estudiante of dataBase.estudiantes){
                         if(estudiante.promedio == prom){
-                            topPromedios[index] = {
-                                codigo: estudiante.codigo,
-                                nombre: estudiante.nombre,
-                                apellido: estudiante.apellido,
-                                promedio: estudiante.promedio,
+                            if(index > 0){
+                                if(topPromedios[index-1].codigo != estudiante.codigo){
+                                    topPromedios[index] = {
+                                        codigo: estudiante.codigo,
+                                        nombre: estudiante.nombre,
+                                        apellido: estudiante.apellido,
+                                        promedio: estudiante.promedio,
+                                    }
+                                    break
+                                }
+                            }else{
+                                topPromedios[index] = {
+                                    codigo: estudiante.codigo,
+                                    nombre: estudiante.nombre,
+                                    apellido: estudiante.apellido,
+                                    promedio: estudiante.promedio,
+                                }
+                                break
                             }
-                            break
                         }
                     }
                 }else{

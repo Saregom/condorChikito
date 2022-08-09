@@ -9,38 +9,75 @@ body{
     margin: auto;
     width: 100%;
     max-width: 700px;
-    /* background-color: rgb(233, 233, 233); */
     box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
     border-radius: 10px;
     overflow: hidden;
     padding-bottom: 20px;
-    /* display:; */
 }
 .menu{
-    /* width: 100%; */
     height: 50px;
     background-color: rgb(228, 228, 228);
-    /* position: relative; */
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
 }
 .menu p{
     margin-left: 20px;
     cursor: pointer;
-    /* border: 1px solid black; */
 }
-/* .div-forms{
+.menu p:hover{
+    text-decoration: underline;
+}
+
+.formBtns input{
+    margin: 20px 5px 5px;
+    border: none;
+    padding: 12px;
+    background-color: lightblue;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.formBtns input:hover{
+    background-color: rgb(140, 194, 212);
+}
+
+.formBtnsEstudents{
     display: flex;
     justify-content: center;
-    align-items: center;
-} */
+    margin: 0 10px 20px;
+}
+.formBtnsEstudents input{
+    border: none;
+    cursor: pointer;
+    border-right: 1px solid black;
+    padding: 10px;
+    background-color: transparent;
+}
+.formBtnsEstudents input:first-child{
+    border-left: 1px solid black;
+}
+.formBtnsEstudents input:hover{
+   background-color: #e4e4e4;
+}
 .form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
 }
+.form-curso-estudiante{
+    padding: 20px;
+}
+.form > input{
+    margin-top: 50px;
+    width: 100%;
+    max-width: 300px;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
 .div-table-cursos{
     display: flex;
     flex-direction: column;
@@ -52,23 +89,17 @@ body{
     border-collapse: collapse;
 }
 .table td, th{
-    border: 1px solid black;
+    border: none;
     padding: 7px;
 }
 
 .table tr:nth-child(odd) {
     background-color: #eae9e9;
 }
-/* .table tr:nth-child(even) {
-    background-color: #ffffff;
-} */
 .table th{
     color: white;
     background-color: #666df2;
 }
-/* .table-cursos tr {
-    background-color: #83a5ef;
-} */
 
 .table thead tr th:last-child{
     background-color: lightcoral;

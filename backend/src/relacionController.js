@@ -151,7 +151,6 @@ let control = {
             dataBase = require('../datosPorDefecto.json')
             writeFile(res, "Error al cargar datos por defecto", "Datos por defecto cargados")
         }
-        
     }
 }
 
@@ -179,11 +178,14 @@ const calcularNotaTotal = (curso, notas) => {
 const calcularPromedio = (estudiante) => {
     let promedio = 0
     let creditosTotales = 0
-    estudiante.cursos.map((curso)=>{
-        promedio += curso.creditos * curso.notaTotal
-        creditosTotales += curso.creditos
-    })
-    promedio /= creditosTotales
+    if(estudiante.cursos.length > 0){
+        estudiante.cursos.map((curso)=>{
+            promedio += curso.creditos * curso.notaTotal
+            creditosTotales += curso.creditos
+        })
+        promedio /= creditosTotales
+    }
+    
     return parseFloat(promedio.toFixed(2))
 }
 

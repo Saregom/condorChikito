@@ -43,18 +43,17 @@ document.formCurso.onsubmit = function(e){
 
 //-----put-----
 const putCurso = () => {
-    const cursoId = query("#cursoId").value
+    const cursoId = query("#cursoId")
     const cursoNombre = query("#cursoNombre").value
     const cursoCreditos = query("#cursoCreditos").value
-    const cursoCreditos2 = document.getElementById("cursoCreditos").value
-    console.log(cursoCreditos)
-    console.log(cursoCreditos2)
+
+    cursoId.required = true
+
     const curso = {
-        id: parseInt(cursoId),
+        id: parseInt(cursoId.value),
         nombre: cursoNombre,
         creditos: parseInt(cursoCreditos)
     }
-    console.log(curso)
 
     fetch("http://localhost:3000/api/cursos", {
         method: 'PUT', 
@@ -126,11 +125,10 @@ const detallesCurso = (id) => {
         fetch(`http://localhost:3000/api/ordenarEstudiantesCurso/?id=${id}`)
         .then(res => res.json())
         .then(estudiantes =>{
-            console.log(id)
             bodyCursosEstud.innerHTML = ""
             estudiantes.map(estudiante => {
                 let tr = "<tr>"
-                if(estudiante.notaTotal < 3.0) tr = "<tr style='background-color: lightcoral'>";
+                if(estudiante.notaTotal < 3.0) tr = "<tr style='background-color: rgba(240, 128, 128, 0.7)'>";
                 bodyCursosEstud.innerHTML += 
                 `${tr}
                     <td>${estudiante.codigo}</td>
@@ -288,7 +286,6 @@ document.formEstudiante.onsubmit = function(e){
     const estudianteNombre = query("#estudianteNombre").value
     const estudianteApellido = query("#estudianteApellido").value
 
-    console.log(estudianteNombre, estudianteApellido)
     const estudiante = {
         nombre: estudianteNombre,
         apellido: estudianteApellido

@@ -4,7 +4,6 @@ let writeFile = require("./relacionController.js").writeFile
 
 let control = {
     buscarCurso: function(req, res){
-        let resultado = dataBase.cursos.filter( (curso) => curso.id == req.query.id )
         let result = {}
         dataBase.cursos.map((curso)=>{
             if(curso.id == req.query.id){
@@ -12,7 +11,6 @@ let control = {
             }
         })
         
-
         if(Object.entries(result).length != 0){
             res.status(200).send(result)
         }
@@ -133,7 +131,6 @@ let control = {
                 })
             })
         }
-
         res.status(200).send(ordenarNotas)
     }
 }

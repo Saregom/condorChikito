@@ -15,18 +15,20 @@
         <div class="menu">
             <p onclick="showHide('.cont-cursos', '.cont-estudiantes')">Cursos</p>
             <p onclick="showHide('.cont-estudiantes', '.cont-cursos')">Estudiantes</p>
+            <p onclick="cargarDatosDefecto()">Cargar datos por defecto</p>
         </div>
         <div class="cont-cursos">
             <h2>Cursos</h2>
             <form name="formCurso" class="form form-curso" >
                 <input class="cursoId" id="cursoId" type="number" placeholder="Id">
-                <input class="cursoNombre" id="cursoNombre" type="text" placeholder="Nombre">
-                <input class="cursoTipo" id="cursoTipo" type="text" placeholder="Tipo">
-                <input class="cursoCreditos" id="cursoCreditos" type="number" placeholder="Creditos">
-    
-                <input type="submit" value="Agregar curso">
-                <input type="button" onclick="putCurso()" value="Actualizar curso">
-                <input type="button" onclick="cargarDatosDefecto()" value="Agregar datos por defecto">
+                <input class="cursoNombre" id="cursoNombre" type="text" placeholder="Nombre" required>
+                <input class="cursoTipo" id="cursoTipo" type="text" placeholder="Tipo" required>
+                <input class="cursoCreditos" id="cursoCreditos" type="number" placeholder="Creditos" required>
+                
+                <div class="formBtns">
+                    <input type="submit" value="Agregar curso">
+                    <input type="button" onclick="putCurso()" value="Actualizar curso">
+                </div>
             </form>
 
             <div class="div-table-cursos">
@@ -43,14 +45,17 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+
                 <div class="div-table-cursos-estudiantes" style="display: none;">
                     <form class="form form-curso-estudiante" >
-                        <input class="cursoId2" id="cursoId2" type="number" placeholder="Id curso">
-                        <input class="codigoEstudiante" id="codigoEstudiante" type="number" placeholder="Codigo estudiante">
-                        <input class="notas" id="notas" type="text" placeholder="notas separadas por coma">
-            
-                        <input type="button" onclick="postCursoEstudiante()" value="Agregar estudiante al curso">
-                        <input type="button" onclick="putCursoEstudiante()" value="Actualizar notas de estudiante">
+                        <input class="cursoId2" id="cursoId2" type="number" placeholder="Id curso" disabled>
+                        <input class="codigoEstudiante" id="codigoEstudiante" type="number" placeholder="Codigo estudiante" required>
+                        <input class="notas" id="notas" type="text" placeholder="notas separadas por coma" required>
+
+                        <div class="formBtns">
+                            <input type="button" onclick="postCursoEstudiante()" value="Agregar estudiante al curso">
+                            <input type="button" onclick="putCursoEstudiante()" value="Actualizar notas de estudiante">
+                        </div>
                     </form>
                     <table class="table table-cursos-estudiantes">
                         <thead>
@@ -68,18 +73,24 @@
                 </div>
             </div>
         </div>
+
         <div class="cont-estudiantes" style="display: none;">
             <h2>Estudiantes</h2>
-            <input type="button" onclick="showEstudiantes()" value="Todos los estudiantes">
-            <input type="button" onclick="topPromedios()" value="Top promedios">
-            <input type="button" onclick="sinCurso()" value="Estudiantes sin curso">
+            <div class=" formBtnsEstudents">
+                <input type="button" onclick="showEstudiantes()" value="Todos los estudiantes">
+                <input type="button" onclick="topPromedios()" value="Top promedios">
+                <input type="button" onclick="sinCurso()" value="Estudiantes sin curso">
+            </div>
+           
             <form name="formEstudiante" class="form form-estudiante" id="formEstudiante">
                 <input class="codigo" id="codigo" type="number" placeholder="Codigo">
-                <input class="estudianteNombre" id="estudianteNombre" type="text" placeholder="Nombre">
-                <input class="estudianteApellido" id="estudianteApellido" type="text" placeholder="Apellido">
+                <input class="estudianteNombre" id="estudianteNombre" type="text" placeholder="Nombre" required>
+                <input class="estudianteApellido" id="estudianteApellido" type="text" placeholder="Apellido" required>
     
-                <input type="submit" value="Agregar estudiante">
-                <input type="button" onclick="putEstudiante()" value="Actualizar estudiante">
+                <div class="formBtns">
+                    <input type="submit" value="Agregar estudiante">
+                    <input type="button" onclick="putEstudiante()" value="Actualizar estudiante">
+                </div>
             </form>
             <div class="div-table-estudiantes">
                 <table class="table table-estudiantes">
